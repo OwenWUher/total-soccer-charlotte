@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Total Soccer Charlotte — Indoor Field Rentals, Leagues & Parties in Matthews, NC</title>
+  <meta name="description" content="Total Soccer Charlotte — indoor field rentals, adult and youth leagues, and birthday parties for all ages in Matthews, NC." />
+
+  <!-- Google Fonts: Barlow Condensed (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" aria-label="Total Soccer Charlotte home">
+        <img src="https://totalsoccercharlotte.com/wp-content/uploads/2022/02/3adbf73d-4dd9-4499-9893-b67b0e3221e5.png" alt="Total Soccer Charlotte" class="nav__logo-img" />
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#services" class="nav__link">Services</a>
+        <a href="#gallery" class="nav__link">Gallery</a>
+        <a href="#hours" class="nav__link">Hours</a>
+        <a href="#contact" class="nav__link">Contact</a>
+        <a href="#contact" class="btn btn--primary nav__cta">Book a Field</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== MOBILE MENU OVERLAY ===== -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+    <nav class="mobile-menu__links" aria-label="Mobile">
+      <a href="#about" class="mobile-menu__link">About</a>
+      <a href="#services" class="mobile-menu__link">Services</a>
+      <a href="#gallery" class="mobile-menu__link">Gallery</a>
+      <a href="#hours" class="mobile-menu__link">Hours</a>
+      <a href="#contact" class="mobile-menu__link">Contact</a>
+      <a href="#contact" class="btn btn--primary mobile-menu__cta">Book a Field</a>
+    </nav>
+  </div>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="hero">
+    <div class="hero__content">
+      <h1 class="hero__title reveal-load reveal-load--1">Charlotte's Premier Indoor Soccer</h1>
+      <p class="hero__subtitle reveal-load reveal-load--2">We love soccer just like you. Field rentals, leagues, and birthday parties for all ages in our 11,000 sq ft indoor facility — Matthews, NC.</p>
+      <div class="hero__ctas reveal-load reveal-load--3">
+        <a href="#contact" class="btn btn--white">Book a Field</a>
+        <a href="#services" class="btn btn--outline">View Services</a>
+      </div>
+      <div class="hero__stats reveal-load reveal-load--4">
+        <span class="hero__pill">⚽ Field Rentals</span>
+        <span class="hero__pill">🎉 Birthday Parties</span>
+        <span class="hero__pill">🏆 Adult Leagues</span>
+        <span class="hero__pill">👟 Youth Leagues</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="about section" id="about">
+    <div class="container about__grid">
+      <div class="about__text reveal">
+        <p class="section-label">ABOUT US</p>
+        <h2 class="section-title">More Than a Field. It's a Community.</h2>
+        <p class="about__para">Total Soccer Charlotte is an 11,000-square-foot field-turfed indoor soccer facility in the heart of Matthews, NC — a brand-new walled-in field with multiple-sized goals, parent bleachers, a sound system, and bathrooms. A place where families, friends, and competitors of every age and skill level can play the game they love, all year round, rain or shine.</p>
+        <p class="about__para">From first-time youth players to seasoned adult league veterans, we're built around one idea: bringing people together through soccer. Reserve the field, throw a birthday party, or join a league — we'll make sure you feel right at home.</p>
+
+        <div class="about__stats">
+          <div class="about__stat">
+            <span class="about__stat-num">OPEN 7 DAYS A WEEK</span>
+            <span class="about__stat-desc">Year-round indoor play</span>
+          </div>
+          <div class="about__stat">
+            <span class="about__stat-num">ALL AGES WELCOME</span>
+            <span class="about__stat-desc">Youth to adult leagues</span>
+          </div>
+          <div class="about__stat">
+            <span class="about__stat-num">MATTHEWS, NC</span>
+            <span class="about__stat-desc">11010 Monroe Rd.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about__photo reveal">
+        <img class="about__img" src="https://totalsoccercharlotte.com/wp-content/uploads/2025/03/IMG_5716-scaled.jpeg" alt="Inside the Total Soccer Charlotte indoor field" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES SECTION ===== -->
+  <section class="services section section--dark" id="services">
+    <div class="services__glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="services__head reveal">
+        <p class="section-label">WHAT WE OFFER</p>
+        <h2 class="section-title section-title--light">Everything Soccer, Under One Roof</h2>
+      </div>
+
+      <div class="services__grid">
+        <!-- Card 1 — Field Rentals -->
+        <article class="service-card reveal" style="--delay:0s">
+          <h3 class="service-card__title">Field Rentals</h3>
+          <p class="service-card__price">$130 / hour · $260 for both fields</p>
+          <p class="service-card__desc">Reserve a 5v5 field by the hour — perfect for team practice, pickup games, skills training, or just getting touches in year-round. Rent one field or both.</p>
+          <a href="https://totalsoccercharlotte.com/rentals-parties/" target="_blank" rel="noopener" class="btn btn--primary service-card__cta">Book Now</a>
+        </article>
+
+        <!-- Card 2 — Birthday Parties -->
+        <article class="service-card reveal" style="--delay:.1s">
+          <h3 class="service-card__title">Birthday Parties</h3>
+          <p class="service-card__price">From $390 · up to 20 kids</p>
+          <p class="service-card__desc">Make their birthday unforgettable with a private 2-hour party on the field. Choose Nerf, soccer, or dodgeball ($390), or the combo package with two activities plus food &amp; cake time ($490). We handle the details.</p>
+          <a href="https://totalsoccercharlotte.com/rentals-parties/" target="_blank" rel="noopener" class="btn btn--primary service-card__cta">Learn More</a>
+        </article>
+
+        <!-- Card 3 — Leagues -->
+        <article class="service-card reveal" style="--delay:.2s">
+          <h3 class="service-card__title">Adult &amp; Youth Leagues</h3>
+          <p class="service-card__price">Team &amp; individual registration</p>
+          <p class="service-card__desc">Competitive and recreational 5v5 leagues for all ages. Adult: Divisions A &amp; B, Women's, and Over 40. Youth: leagues for players ages 8 and up. Join as a team or as an individual.</p>
+          <a href="https://totalsoccercharlotte.leagueapps.com/login" target="_blank" rel="noopener" class="btn btn--primary service-card__cta">Register</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PHOTO GALLERY SECTION ===== -->
+  <section class="gallery section" id="gallery">
+    <div class="container">
+      <div class="gallery__head reveal">
+        <p class="section-label">THE FACILITY</p>
+        <h2 class="section-title">See It for Yourself</h2>
+      </div>
+
+      <div class="gallery__grid">
+        <button class="gallery__item gallery__item--tall reveal" style="--delay:0s" data-src="https://totalsoccercharlotte.com/wp-content/uploads/2024/09/Field-1-Picjpg-scaled.jpg"><img src="https://totalsoccercharlotte.com/wp-content/uploads/2024/09/Field-1-Picjpg-scaled.jpg" alt="The indoor field" loading="lazy" /><span>The Field</span></button>
+        <button class="gallery__item reveal" style="--delay:.05s" data-src="https://totalsoccercharlotte.com/wp-content/uploads/2022/02/Party.jpg"><img src="https://totalsoccercharlotte.com/wp-content/uploads/2022/02/Party.jpg" alt="Birthday party" loading="lazy" /><span>Birthday Party</span></button>
+        <button class="gallery__item reveal" style="--delay:.1s" data-src="https://totalsoccercharlotte.com/wp-content/uploads/2024/08/Adult-League2-scaled.jpg"><img src="https://totalsoccercharlotte.com/wp-content/uploads/2024/08/Adult-League2-scaled.jpg" alt="Adult league play" loading="lazy" /><span>Adult League</span></button>
+        <button class="gallery__item gallery__item--tall reveal" style="--delay:.15s" data-src="https://totalsoccercharlotte.com/wp-content/uploads/2025/03/IMG_5724-scaled.jpeg"><img src="https://totalsoccercharlotte.com/wp-content/uploads/2025/03/IMG_5724-scaled.jpeg" alt="Players on the field" loading="lazy" /><span>Game Time</span></button>
+        <button class="gallery__item reveal" style="--delay:.2s" data-src="https://totalsoccercharlotte.com/wp-content/uploads/2024/09/field-picjpg-scaled.jpg"><img src="https://totalsoccercharlotte.com/wp-content/uploads/2024/09/field-picjpg-scaled.jpg" alt="The turf field" loading="lazy" /><span>The Turf</span></button>
+        <button class="gallery__item gallery__item--tall reveal" style="--delay:.25s" data-src="https://totalsoccercharlotte.com/wp-content/uploads/2024/09/Party-Set-Up-scaled.jpg"><img src="https://totalsoccercharlotte.com/wp-content/uploads/2024/09/Party-Set-Up-scaled.jpg" alt="Party setup" loading="lazy" /><span>Party Setup</span></button>
+        <button class="gallery__item reveal" style="--delay:.3s" data-src="https://totalsoccercharlotte.com/wp-content/uploads/2025/03/IMG_5492-scaled.jpeg"><img src="https://totalsoccercharlotte.com/wp-content/uploads/2025/03/IMG_5492-scaled.jpeg" alt="Indoor facility" loading="lazy" /><span>The Facility</span></button>
+        <button class="gallery__item reveal" style="--delay:.35s" data-src="https://totalsoccercharlotte.com/wp-content/uploads/2024/08/Event-scaled.jpg"><img src="https://totalsoccercharlotte.com/wp-content/uploads/2024/08/Event-scaled.jpg" alt="Event at the facility" loading="lazy" /><span>Events</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIGHTBOX OVERLAY ===== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+  </div>
+
+  <!-- ===== BOOKING CTA BAND ===== -->
+  <section class="cta-band">
+    <div class="container cta-band__inner reveal">
+      <h2 class="cta-band__title">Ready to Hit the Field?</h2>
+      <p class="cta-band__text">Reservations are easy — call, email, or fill out our contact form below.</p>
+      <a href="#contact" class="btn btn--white cta-band__btn">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- ===== HOURS & LOCATION SECTION ===== -->
+  <section class="hours section" id="hours">
+    <div class="container hours__grid">
+      <div class="hours__info reveal">
+        <p class="section-label">HOURS &amp; LOCATION</p>
+        <h2 class="section-title">Come Play With Us</h2>
+
+        <table class="hours__table">
+          <tbody>
+            <tr>
+              <th scope="row">Monday – Sunday</th>
+              <td>HOURS_MON_SUN</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="hours__address">
+          <span class="hours__pin" aria-hidden="true">📍</span>
+          <div>
+            <p>11010 Monroe Rd., Matthews, NC 28105</p>
+            <a class="hours__directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=11010+Monroe+Rd+Matthews+NC+28105" target="_blank" rel="noopener">Get Directions →</a>
+          </div>
+        </div>
+      </div>
+
+      <a class="hours__map reveal" href="https://www.google.com/maps/dir/?api=1&amp;destination=11010+Monroe+Rd+Matthews+NC+28105" target="_blank" rel="noopener">
+        <div class="placeholder placeholder--map">MAP — 11010 Monroe Rd, Matthews NC</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="contact__head reveal">
+        <p class="section-label">CONTACT</p>
+        <h2 class="section-title">Get in Touch</h2>
+      </div>
+
+      <div class="contact__grid">
+        <form class="contact__form reveal" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" />
+            <span class="field__error" data-error-for="name"></span>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" />
+            <span class="field__error" data-error-for="email"></span>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(704) 000-0000" />
+            <span class="field__error" data-error-for="phone"></span>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="How can we help?"></textarea>
+            <span class="field__error" data-error-for="message"></span>
+          </div>
+          <button type="submit" class="btn btn--primary contact__submit">Send Message</button>
+          <p class="contact__success" id="contactSuccess" role="status">⚽ Thanks! Your message is ready to go — we'll be in touch soon.</p>
+        </form>
+
+        <aside class="contact__details reveal">
+          <ul class="contact__list">
+            <li><span class="contact__icon">📞</span> <a href="tel:+17047128632">(704) 712-8632</a></li>
+            <li><span class="contact__icon">✉</span> <a href="mailto:mattuher@mac.com">mattuher@mac.com</a></li>
+            <li><span class="contact__icon">📍</span> 11010 Monroe Rd., Matthews, NC 28105</li>
+          </ul>
+          <div class="contact__social">
+            <a href="https://instagram.com/totalsoccercharlotte" target="_blank" rel="noopener">Instagram <span>@totalsoccercharlotte</span></a>
+            <a href="https://facebook.com/totalsoccercharlotte" target="_blank" rel="noopener">Facebook <span>@totalsoccercharlotte</span></a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <img src="https://totalsoccercharlotte.com/wp-content/uploads/2022/02/3adbf73d-4dd9-4499-9893-b67b0e3221e5.png" alt="Total Soccer Charlotte" class="footer__logo" />
+        <p class="footer__tag">Charlotte's premier indoor soccer facility. We love soccer just like you.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#hours">Hours</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://instagram.com/totalsoccercharlotte" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://facebook.com/totalsoccercharlotte" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <p class="footer__copy">© 2025 Total Soccer Charlotte. All rights reserved. &nbsp;·&nbsp; Created with <a href="https://outscopedesigns.com" target="_blank" rel="noopener" class="footer__credit">OutScope Designs</a></p>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
