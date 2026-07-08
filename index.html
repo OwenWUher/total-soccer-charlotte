@@ -50,6 +50,12 @@
     </nav>
   </div>
 
+  <!-- ===== FLOATING MENU BUTTON (always-accessible nav) ===== -->
+  <button class="fab-menu" id="fabMenu" aria-label="Open navigation menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+    <em>Menu</em>
+  </button>
+
   <!-- ===== HERO SECTION ===== -->
   <section class="hero" id="hero">
     <div class="hero__content">
@@ -114,23 +120,69 @@
           <h3 class="service-card__title">Field Rentals</h3>
           <p class="service-card__price">$130 / hour · $260 for both fields</p>
           <p class="service-card__desc">Reserve a 5v5 field by the hour — perfect for team practice, pickup games, skills training, or just getting touches in year-round. Rent one field or both.</p>
-          <a href="https://totalsoccercharlotte.com/rentals-parties/" target="_blank" rel="noopener" class="btn btn--primary service-card__cta">Book Now</a>
+          <button class="btn btn--primary service-card__cta" aria-expanded="false" aria-controls="panel-rentals">
+            <span>Book Now</span>
+            <span class="service-card__chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="service-panel" id="panel-rentals" role="region" aria-label="Field rental details">
+            <div class="service-panel__inner">
+              <ul class="panel-rows">
+                <li><span>One 5v5 field</span><strong>$130 / hour</strong></li>
+                <li><span>Both fields</span><strong>$260 / hour</strong></li>
+              </ul>
+              <p>Great for team practices, pickup games, skills training, and year-round play — rain or shine. Availability fills up fast on evenings and weekends, so reach out early.</p>
+              <a href="#contact" class="btn btn--primary panel-cta">Check Availability</a>
+            </div>
+          </div>
         </article>
 
         <!-- Card 2 — Birthday Parties -->
         <article class="service-card reveal" style="--delay:.1s">
           <h3 class="service-card__title">Birthday Parties</h3>
           <p class="service-card__price">From $390 · up to 20 kids</p>
-          <p class="service-card__desc">Make their birthday unforgettable with a private 2-hour party on the field. Choose Nerf, soccer, or dodgeball ($390), or the combo package with two activities plus food &amp; cake time ($490). We handle the details.</p>
-          <a href="https://totalsoccercharlotte.com/rentals-parties/" target="_blank" rel="noopener" class="btn btn--primary service-card__cta">Learn More</a>
+          <p class="service-card__desc">Make their birthday unforgettable with a private 2-hour party on the field. Choose Nerf, soccer, or dodgeball, or the combo package with two activities plus food &amp; cake time. We handle the details.</p>
+          <button class="btn btn--primary service-card__cta" aria-expanded="false" aria-controls="panel-parties">
+            <span>Learn More</span>
+            <span class="service-card__chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="service-panel" id="panel-parties" role="region" aria-label="Birthday party packages">
+            <div class="service-panel__inner">
+              <div class="panel-package">
+                <div class="panel-package__head"><strong>Nerf, Soccer, or Dodgeball</strong><span class="panel-package__price">$390</span></div>
+                <p>2-hour party — 45 min of staff-led activity plus 1 hr 15 min of open play. Up to 20 kids. Nerf option available for ages 7+.</p>
+              </div>
+              <div class="panel-package">
+                <div class="panel-package__head"><strong>Combo Package</strong><span class="panel-package__price">$490</span></div>
+                <p>2-hour party — two 45-min activities (mix &amp; match) plus 30 min for food &amp; cake. Up to 20 kids.</p>
+              </div>
+              <a href="#contact" class="btn btn--primary panel-cta">Book a Party</a>
+            </div>
+          </div>
         </article>
 
         <!-- Card 3 — Leagues -->
         <article class="service-card reveal" style="--delay:.2s">
           <h3 class="service-card__title">Adult &amp; Youth Leagues</h3>
           <p class="service-card__price">Team &amp; individual registration</p>
-          <p class="service-card__desc">Competitive and recreational 5v5 leagues for all ages. Adult: Divisions A &amp; B, Women's, and Over 40. Youth: leagues for players ages 8 and up. Join as a team or as an individual.</p>
-          <a href="https://totalsoccercharlotte.leagueapps.com/login" target="_blank" rel="noopener" class="btn btn--primary service-card__cta">Register</a>
+          <p class="service-card__desc">Competitive and recreational 5v5 leagues for all ages. Join as a team or as an individual — we'll help you find the right division.</p>
+          <button class="btn btn--primary service-card__cta" aria-expanded="false" aria-controls="panel-leagues">
+            <span>Register</span>
+            <span class="service-card__chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="service-panel" id="panel-leagues" role="region" aria-label="League details">
+            <div class="service-panel__inner">
+              <div class="panel-package">
+                <div class="panel-package__head"><strong>Adult Leagues</strong></div>
+                <p>5v5 play across Division A (Competitive, 18+), Division B, Women's (18+), and Over 40.</p>
+              </div>
+              <div class="panel-package">
+                <div class="panel-package__head"><strong>Youth Leagues</strong></div>
+                <p>5v5 recreational leagues for players ages 8 and up — maximum touches, real game IQ. Summer season runs June–August.</p>
+              </div>
+              <a href="#contact" class="btn btn--primary panel-cta">Ask About Registration</a>
+              <a href="https://totalsoccercharlotte.leagueapps.com/login" target="_blank" rel="noopener" class="panel-link">Or register online via LeagueApps →</a>
+            </div>
+          </div>
         </article>
       </div>
     </div>

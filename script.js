@@ -15,8 +15,11 @@ const springSnappy = { type: "spring", stiffness: 400, damping: 28 };
    NAV: transparent -> solid on scroll
    ============================================================ */
 const nav = document.getElementById("nav");
+const fab = document.getElementById("fabMenu");
 function onScroll() {
   nav.classList.toggle("nav--scrolled", window.scrollY > 80);
+  // Show the floating menu once the user scrolls past the hero.
+  fab.classList.toggle("fab-menu--visible", window.scrollY > 500);
 }
 window.addEventListener("scroll", onScroll, { passive: true });
 onScroll();
@@ -32,19 +35,46 @@ function openMenu() {
   menu.classList.add("mobile-menu--open");
   menu.setAttribute("aria-hidden", "false");
   toggle.setAttribute("aria-expanded", "true");
+  fab.setAttribute("aria-expanded", "true");
   document.body.style.overflow = "hidden";
 }
 function closeMenu() {
   menu.classList.remove("mobile-menu--open");
   menu.setAttribute("aria-hidden", "true");
   toggle.setAttribute("aria-expanded", "false");
+  fab.setAttribute("aria-expanded", "false");
   document.body.style.overflow = "";
 }
 
 toggle.addEventListener("click", openMenu);
+fab.addEventListener("click", openMenu);
 menuClose.addEventListener("click", closeMenu);
 menu.querySelectorAll(".mobile-menu__link, .mobile-menu__cta").forEach((link) => {
   link.addEventListener("click", closeMenu);
+});
+
+/* ============================================================
+   SERVICE DROPDOWNS — in-page expandable panels (no new tabs)
+   ============================================================ */
+const serviceCards = document.querySelectorAll(".service-card");
+serviceCards.forEach((card) => {
+  const trigger = card.querySelector(".service-card__cta");
+  const panel = card.querySelector(".service-panel");
+  if (!trigger || !panel) return;
+
+  trigger.addEventListener("click", () => {
+    const isOpen = panel.classList.contains("is-open");
+
+    // Accordion behavior: close any other open panel first.
+    serviceCards.forEach((other) => {
+      if (other === card) return;
+      other.querySelector(".service-panel")?.classList.remove("is-open");
+      other.querySelector(".service-card__cta")?.setAttribute("aria-expanded", "false");
+    });
+
+    panel.classList.toggle("is-open", !isOpen);
+    trigger.setAttribute("aria-expanded", String(!isOpen));
+  });
 });
 
 /* ============================================================
