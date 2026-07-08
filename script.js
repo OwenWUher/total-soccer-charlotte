@@ -207,7 +207,21 @@ document.addEventListener("keydown", (e) => {
    ============================================================ */
 const form = document.getElementById("contactForm");
 const success = document.getElementById("contactSuccess");
+const submitBtn = form.querySelector(".contact__submit");
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// FormSubmit AJAX endpoint — delivers to this inbox with no visible redirect.
+// First submission triggers a one-time activation email to this address.
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/mattuher@mac.com";
+
+function showStatus(message, isError) {
+  success.textContent = message;
+  success.classList.add("contact__success--show");
+  success.classList.toggle("contact__success--error", Boolean(isError));
+  if (!reduceMotion) {
+    animate(success, { opacity: [0, 1], transform: ["translateY(10px)", "translateY(0px)"] }, springSoft);
+  }
+}
 
 function setError(name, message) {
   const input = form.querySelector(`[name="${name}"]`);
@@ -217,7 +231,7 @@ function setError(name, message) {
   errorEl.textContent = message || "";
 }
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
   let valid = true;
   const data = {
@@ -245,12 +259,53 @@ form.addEventListener("submit", (e) => {
     return;
   }
 
-  // Form does not submit anywhere — show styled success message.
-  form.reset();
-  success.classList.add("contact__success--show");
-  if (!reduceMotion) {
-    animate(success, { opacity: [0, 1], transform: ["translateY(10px)", "translateY(0px)"] }, springSoft);
+  // Silent honeypot: if a bot filled the hidden field, fake success and bail.
+  if (form._honey && form._honey.value) {
+    form.reset();
+    showStatus("⚽ Thanks! Your message has been sent — we'll be in touch soon.", false);
+    return;
   }
+
+  // Submit in the background via FormSubmit's AJAX endpoint.
+  const originalLabel = submitBtn.textContent;
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Sending…";
+
+  try {
+    const res = await fetch(FORM_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+        _subject: "New contact from Total Soccer Charlotte website",
+        _template: "table",
+      }),
+    });
+
+    const result = await res.json().catch(() => ({}));
+
+    if (res.ok && (result.success === "true" || result.success === true)) {
+      form.reset();
+      showStatus("⚽ Thanks! Your message has been sent — we'll be in touch soon.", false);
+    } else {
+      throw new Error(result.message || "Submission failed");
+    }
+  } catch (err) {
+    showStatus(
+      "Something went wrong sending your message. Please try again, or reach us directly at (704) 712-8632 or mattuher@mac.com.",
+      true
+    );
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalLabel;
+  }
+
   success.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 

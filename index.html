@@ -265,6 +265,8 @@
 
       <div class="contact__grid">
         <form class="contact__form reveal" id="contactForm" novalidate>
+          <!-- Honeypot spam trap: bots fill this hidden field; humans never see it. -->
+          <input type="text" name="_honey" class="field__honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="field">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your name" />
