@@ -54,6 +54,31 @@ menu.querySelectorAll(".mobile-menu__link, .mobile-menu__cta").forEach((link) =>
 });
 
 /* ============================================================
+   CLEAN ANCHOR NAVIGATION
+   Smooth-scroll to the section, then strip the #hash from the URL
+   so refreshing always loads from the top (no sticky sections).
+   ============================================================ */
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    const id = link.getAttribute("href").slice(1);
+    if (!id) return;
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    e.preventDefault();
+    target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+    // Remove the hash without adding a history entry or triggering a jump.
+    history.replaceState(null, "", location.pathname + location.search);
+  });
+});
+
+// If the page is loaded with a leftover hash, clear it and start at the top.
+if (location.hash) {
+  history.replaceState(null, "", location.pathname + location.search);
+  window.scrollTo(0, 0);
+}
+
+/* ============================================================
    SERVICE DROPDOWNS — in-page expandable panels (no new tabs)
    ============================================================ */
 const serviceCards = document.querySelectorAll(".service-card");
